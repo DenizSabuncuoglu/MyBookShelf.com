@@ -1,0 +1,572 @@
+/* Reset and base styles */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d3e8e3;
+}
+
+/* Navigation bar */
+.nav-bar {
+    width: 100%;
+    height: 100px;
+    background-color: #2c3532;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-bar h1 {
+    color: #ffcb9a;
+    padding-left: 40px;
+}
+
+#searchBox {
+    width: 400px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background-color: #d3e8e3;
+    color: #0f6466;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchList {
+    position: absolute;
+    top: 50px; /* height of the searchBox + margin */
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 101;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+
+#searchList li {
+    margin-bottom: 5px;
+}
+
+#searchList li a{
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+
+#searchList li a:hover:not(.header){
+    background-color: #eee;
+}
+.nav-links ul {
+    display: flex;
+    padding-right: 100px;
+}
+
+.nav-links ul li {
+    list-style-type: none;
+    padding: 20px;
+    text-decoration: none;
+    color: #ffcb9a;
+    padding-bottom: 3px;
+    cursor: pointer;
+    transition: all ease-in-out 0.1s;
+
+}
+
+.nav-links ul li:hover {
+    border-bottom: 1px solid #ffcb9a;
+}
+
+.nav-links ul li:active {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.nav-links ul a{
+    text-decoration: none;
+}
+
+
+/* Main container */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #0f6466;
+    font-size: 30px;
+    text-align: center;
+}
+
+.books h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #0f6466;
+    font-size: 30px;
+    text-align: center;
+}
+ .container h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    width: 100vh;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+
+}
+
+/* Reading sections */
+#planToRead, #reading, #onHold {
+    width: 20%;
+    height: 400px;
+    background-color: #c87e46;
+    margin-top: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+/* Bookshelf genre sections */
+.books h2 {
+    font-size: 45px;
+    color: #0f6466;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #0f6466;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+
+#world-lit, #fantasy, #scifi {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    max-width: 100%;
+  
+
+}
+
+/* Individual book card */
+.book {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    flex: 0 0 auto;
+}
+
+.book-image {
+    width: 200px;
+    height: 330px;
+    border: 4px solid slategray;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.book-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.book-name {
+    text-align: center;
+    color: #2c3532;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Buttons for books */
+.addBtn:hover {
+    color: #0f6466;
+    background-color: #ffcb9a;
+}
+
+.infoBtn:hover{
+    color: #2c3532;
+    background-color: #fff;
+}
+
+.addBtn:focus {
+    outline: 3px solid #0f6466;
+    outline-offset: 2px;
+}
+
+.infoBtn:focus {
+    outline: 3px solid #0f6466;
+    outline-offset: 2px;
+}
+
+
+.added-btn {
+    background-color: lightgray;
+    color: #555;
+    border-color: gray;
+    cursor: not-allowed;
+}
+
+.infoBtn{
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    background-color: #2c3532;
+    color: #d3e8e3;
+}
+
+.addBtn{
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    color: #ffcb9a;
+    background-color: #0f6466;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Plan to Read items */
+.planToReadItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background: #ffcb9a;
+    color: rgb(5, 24, 64);
+    border-radius: 10px;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.planToReadItemContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.planToReadItemImage {
+    width: 100px;
+    height: 165px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.planToReadItem h4 {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+/* Delete button */
+.delete-btn {
+    background: red;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 10px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+.delete-btn:active {
+    background-color: rgb(41, 5, 5);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #searchBox {
+        width: 90%;
+        margin-top: 10px;
+    }
+    
+    #searchList {
+        width: 90%;
+        top: 150px; /* Adjust depending on navbar height */
+    }
+    
+    .nav-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    #planToRead, #reading, #onHold {
+        flex-direction: column;
+        height: 350px;
+        padding: 10px;
+    }
+
+    .book-image {
+        width: 150px;
+        height: auto;
+    }
+
+    .book {
+        margin: 10px 0;
+    }
+
+    .planToReadItem {
+        width: 150px;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+
+.modal-content {
+    background-color: #0f6466;
+    margin: 10% auto;
+    padding: 30px;
+    border: 3px solid #fff;
+    width: 30%;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+#modalTitle, #modalWriter, #modalYear, #modalDescription{
+    padding-bottom: 20px;
+}
+
+.infoClose-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.infoClose-btn:hover {
+    color: #fff;
+}
+
+.aboutClose-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.aboutClose-btn:hover {
+    color: #fff;
+}
+
+.contactClose-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.contactClose-btn:hover {
+    color: #fff;
+}
+
+
+.arrow-left,
+.arrow-right {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 70%;
+    transition: all ease-in-out 0.1s;
+    flex-shrink: 0; /* Prevent arrows from shrinking */
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    opacity: 100%;
+}
+.arrow-left:active, .arrow-right:active {
+    transform: scale(80%);
+}
+
+
+
+.book-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.book-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 10px;
+    overflow-x: auto;
+    width: 100%;
+
+}
+
+.book-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+#aboutModal {
+    display: none; /* Default is hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Dim background */
+}
+
+#aboutModal .modal-content {
+    background-color: #0f6466;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+#aboutTitle{
+    padding-bottom: 20px;
+}
+
+
+#contactModal {
+    display: none; /* Default is hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Dim background */
+}
+
+#contactModal .modal-content {
+    background-color: #0f6466;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+#contactTitle{
+    padding-bottom: 20px;
+}
+
+
+i{
+    font-size: 50px;
+    padding: 20px;
+ 
+}
+
+#contactModal a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.nav-bar i {
+    font-size: 25px;
+    color: #fff; 
+    cursor: pointer;
+}
+
+
+#volume-slider{
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #fff;
+    margin-left: -80px;
+    border-radius: 15px;
+    height: 6px;
+}
+
+#volume-slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #0f6466;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
